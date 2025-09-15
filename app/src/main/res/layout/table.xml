@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1"
+        android:padding="16dp">
+
+        <TableRow>
+            <TextView
+                android:id="@+id/title"
+                android:layout_span="2"
+                android:gravity="center"
+                android:text="@string/pokemon_tracker"
+                android:textSize="24sp"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/subtitle"
+                android:layout_span="2"
+                android:gravity="center"
+                android:text="@string/register_new_catch"
+                android:textSize="16sp"
+                android:layout_marginBottom="16dp"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/nationalNumberLabel"
+                android:text="@string/national_number"/>
+            <EditText
+                android:id="@+id/nationalNumberInput"
+                android:layout_width="match_parent"
+                android:inputType="number"
+                android:text="@string/_896"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/nameLabel"
+                android:text="@string/name"/>
+            <EditText
+                android:id="@+id/nameInput"
+                android:layout_width="match_parent"
+                android:inputType="text"
+                android:text="@string/glastrier"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/speciesLabel"
+                android:text="@string/species"/>
+            <EditText
+                android:id="@+id/speciesInput"
+                android:layout_width="match_parent"
+                android:inputType="text"
+                android:text="@string/wild_horse_pokemon"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/GenderLabel"
+                android:text="@string/gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <RadioGroup
+                android:id="@+id/genderGroup"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/maleButton"
+                    android:text="@string/male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <RadioButton
+                    android:id="@+id/femaleButton"
+                    android:text="@string/female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <RadioButton
+                    android:id="@+id/unkButton"
+                    android:text="@string/unk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RadioGroup>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/heightLabel"
+                android:text="@string/height"/>
+            <EditText
+                android:id="@+id/heightInput"
+                android:layout_width="match_parent"
+                android:inputType="numberDecimal"
+                android:text="@string/defaultMeters"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/weightLabel"
+                android:text="@string/weight"/>
+            <EditText
+                android:id="@+id/weightInput"
+                android:layout_width="match_parent"
+                android:inputType="numberDecimal"
+                android:text="@string/defaultKg"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/levelLabel"
+                android:text="@string/level"/>
+            <Spinner
+                android:id="@+id/levelSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/baseStatsLabel"
+                android:layout_span="2"
+                android:text="@string/base_stats"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/hpLabel"
+                android:text="@string/hp"/>
+            <EditText
+                android:id="@+id/hpInput"
+                android:layout_width="match_parent"
+                android:inputType="number"
+                android:text="@string/defaultBaseStats"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/attackLabel"
+                android:text="@string/attack"/>
+            <EditText
+                android:id="@+id/attackInput"
+                android:layout_width="match_parent"
+                android:inputType="number"
+                android:text="@string/defaultBaseStats"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/defenseLabel"
+                android:text="@string/defense"/>
+            <EditText
+                android:id="@+id/defenseInput"
+                android:layout_width="match_parent"
+                android:inputType="number"
+                android:text="@string/defaultBaseStats"/>
+        </TableRow>
+
+        <TableRow>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/resetButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/reset"/>
+
+                <Button
+                    android:id="@+id/saveButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/save"/>
+            </LinearLayout>
+        </TableRow>
+
+    </TableLayout>
+</ScrollView>

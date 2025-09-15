@@ -258,7 +258,7 @@
             android:text="@string/defaultMeters"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/genderGroup" />
-
+        <!--
         <TextView
             android:id="@+id/metersLabel"
             android:layout_width="wrap_content"
@@ -270,7 +270,7 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/genderGroup" />
-
+        -->
         <EditText
             android:id="@+id/weightInput"
             android:layout_width="wrap_content"
@@ -318,7 +318,7 @@
             android:text="@string/defaultBaseStats"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/attackInput" />
-
+        <!--
         <TextView
             android:id="@+id/kilograms"
             android:layout_width="wrap_content"
@@ -328,7 +328,7 @@
             android:text="@string/kilograms"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/heightInput" />
-
+        -->
         <Spinner
             android:id="@+id/levelSpinner"
             android:layout_width="215dp"
