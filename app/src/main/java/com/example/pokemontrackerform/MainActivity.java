@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.linear);
+        setContentView(R.layout.constraint);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -150,6 +150,8 @@ public class MainActivity extends AppCompatActivity {
                 speciesLabel.setTextColor(Color.BLACK);
 
                 //checks to make sure nothing is empty
+                //now that i am looking at i dont think i need this
+                /*
                 if (nationalNumber.getText().toString().isEmpty()) {
                     correct = false;
                     nationalNumLabel.setTextColor(Color.RED);
@@ -189,6 +191,8 @@ public class MainActivity extends AppCompatActivity {
                     weightLabel.setTextColor(Color.RED);
                     errors.append("Weight cannot be empty.\n");
                 }
+
+                 */
                 int selectedGenderId = rGroup.getCheckedRadioButtonId();
                 if (selectedGenderId == -1) {
                     correct = false;
@@ -199,6 +203,16 @@ public class MainActivity extends AppCompatActivity {
                     levelLabel.setTextColor(Color.RED);
                     errors.append("Levels needs to be selected.\n");
                 }
+                if (species.getText().toString().isEmpty()) {
+                    correct = false;
+                    speciesLabel.setTextColor(Color.RED);
+                    errors.append("Must input something into species.\n");
+                }
+                if (name.getText().toString().isEmpty()) {
+                    correct = false;
+                    nameLabel.setTextColor(Color.RED);
+                    errors.append("Name cannot be empty.\n"); }
+
 
 
 
@@ -250,27 +264,42 @@ public class MainActivity extends AppCompatActivity {
                     }
                     species.setText(sb.toString().trim());
                 }
-
-                int nationalNumValue = Integer.parseInt(nationalNumber.getText().toString());
+                String nationalNumStr = nationalNumber.getText().toString();
+                if (nationalNumStr.isEmpty()) {
+                    nationalNumStr = "100000";
+                }
+                int nationalNumValue = Integer.parseInt(nationalNumStr);
                 if(nationalNumValue < 0 || nationalNumValue > 1010) {
                     correct = false;
                     nationalNumLabel.setTextColor(Color.RED);
                     errors.append("National number must be between 0 and 1010.");
                 }
 
-                int hpValue = Integer.parseInt(hp.getText().toString());
+                String hpStr = hp.getText().toString();
+                if(hpStr.isEmpty()) {
+                    hpStr ="0";
+                }
+                int hpValue = Integer.parseInt(hpStr);
                 if (hpValue < 1 || hpValue > 362) {
                     correct = false;
                     hpLabel.setTextColor(Color.RED);
                     errors.append("HP must be 1–362.\n"); }
 
-                int attackValue = Integer.parseInt(attack.getText().toString());
+                String attackStr = attack.getText().toString();
+                if(attackStr.isEmpty()) {
+                    attackStr = "10000";
+                }
+                int attackValue = Integer.parseInt(attackStr);
                 if (attackValue < 0 || attackValue > 526) {
                     correct = false;
                     attackLabel.setTextColor(Color.RED);
                     errors.append("Attack must be 0–526.\n"); }
 
-                int defenseValue = Integer.parseInt(defense.getText().toString());
+                String defenseStr = defense.getText().toString();
+                if(defenseStr.isEmpty()) {
+                    defenseStr = "0";
+                }
+                int defenseValue = Integer.parseInt(defenseStr);
                 if (defenseValue < 10 || defenseValue > 614) {
                     correct = false;
                     defenseLabel.setTextColor(Color.RED);
@@ -280,17 +309,25 @@ public class MainActivity extends AppCompatActivity {
                 if (heightStr.endsWith("m")) {
                     heightStr = heightStr.substring(0, heightStr.length() - 1);
                 }
+                //if empty
+                if(heightStr.isEmpty()) {
+                    heightStr ="0";
+                }
                 double heightValue = Double.parseDouble(heightStr);
                 if (heightValue < 0.2 || heightValue > 169.99 || heightStr.contains(".") && heightStr.substring(heightStr.indexOf(".") + 1).length() > 2) {
                     correct = false;
                     heightLabel.setTextColor(Color.RED);
-                    errors.append("Height must be 0.2–169.99.\n"); }
+                    errors.append("Height must be 0.2–169.99 and two decimals.\n"); }
                 heightStr = heightStr + "m";
                 height.setText(heightStr);
 
                 String weightStr = weight.getText().toString();
                 if (weightStr.endsWith("Kg")) {
                     weightStr = weightStr.substring(0, weightStr.length() - 2);
+                }
+                //if empty
+                if(weightStr.isEmpty()) {
+                    weightStr ="0";
                 }
                 double weightValue = Double.parseDouble(weightStr);
                 if (weightValue < 0.1 || weightValue > 992.7 || weightStr.contains(".") && weightStr.substring(weightStr.indexOf(".") + 1).length() > 2) {
